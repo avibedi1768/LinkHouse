@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 //import firebase
 import { db } from '../../firebase'
@@ -55,13 +56,13 @@ function GetLink() {
 
   return (
     <div>
-      <h2>Hey {user}</h2>
+      <h2>Welcome to {user}'s Link-House!</h2>
 
       {link.length > 0 ? (
         <ul>
           {link.map((item, index) => (
             <li key={index}>
-              <a href={process.env.PUBLIC_URL + item}>{social[index]}</a>
+              <Link to={item}>{social[index]}</Link>
             </li>
           ))}
         </ul>

@@ -14,10 +14,15 @@ function CopyText(para) {
     document.body.removeChild(textArea)
     alert('copy done')
   }
+
+  const openLink = () => {
+    window.location.href=para.first + para.second
+  }
   return (
     <div>
       <input type="text" defaultValue={para.first + para.second} />
       <button onClick={copyToClipboard}>copy</button>
+      <button onClick={openLink}>Open Link</button>
     </div>
   )
 }
