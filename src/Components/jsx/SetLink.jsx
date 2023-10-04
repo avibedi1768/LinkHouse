@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+
+import CopyText from './CopyText'
 
 // import firebase
 import { db } from '../../firebase'
@@ -8,10 +9,11 @@ import { get, set, ref, update } from 'firebase/database'
 
 function SetLink() {
 
+  let beforeLink='https://link-house.vercel.app/getlink#'
   let username = localStorage.getItem('username')
   let url = window.location.href.split('#')[1]
 
-  if (username != url) {
+  if (username !== url) {
     window.location.href = '/login'
   }
 
@@ -52,6 +54,10 @@ function SetLink() {
       <input type="text" placeholder='name of site/social' onChange={(e) => setSocial(e.target.value)} />
       <input type="text" placeholder='enter the link' onChange={(e) => setLink(e.target.value)} />
       <button onClick={add}>Add</button>
+
+      {/* link for getlink */}
+      <p>you can share this link to your friends:</p>
+      <CopyText first={beforeLink} second={username}/>
     </div>
   )
 }
