@@ -22,6 +22,10 @@ function SetLink() {
   let [link, setLink] = useState('')
 
   function add() {
+    if (social === '' || link === '') {
+      alert('Please enter valid info')
+      return;
+    }
     console.log(social + ' ' + link)
 
     //get number
