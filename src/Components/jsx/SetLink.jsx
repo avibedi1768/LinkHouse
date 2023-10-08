@@ -22,6 +22,7 @@ function SetLink() {
   let [link, setLink] = useState('')
 
   function add() {
+    //prevents empty strings
     if (social === '' || link === '') {
       alert('Please enter valid info')
       return;
