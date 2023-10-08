@@ -27,6 +27,19 @@ function SetLink() {
       alert('Please enter valid info')
       return;
     }
+
+    if (link.startsWith('https://')) {
+      console.log('good')
+    }
+    else {
+      console.log('bad')
+      // let l = link
+      // setLink('https://' + link)
+      // console.log(link)
+      alert('Please enter correct https:// format link')
+      return;
+    }
+
     console.log(social + ' ' + link)
 
     //get number
@@ -34,25 +47,26 @@ function SetLink() {
       .then((snapshot) => {
         const n = snapshot.val()
         console.log(n)
-        setSocial(n)
+        setSocialLink(n)
       })
+  }
 
-    // set social links
-    function setSocial(n) {
-      // add social, link
-      set(ref(db, 'username/' + username + '/messages/' + n), {
-        social: social,
-        link: link
-      })
+  // set social links
+  function setSocialLink(n) {
+    // add social, link
+    set(ref(db, 'username/' + username + '/messages/' + n), {
+      social: social,
+      link: link
+    })
 
-      // update number
-      update(ref(db, 'username/' + username + '/credentials/'), {
-        number: n + 1
-      })
+    // update number
+    update(ref(db, 'username/' + username + '/credentials/'), {
+      number: n + 1
+    })
 
-      alert('Social Link added')
-      window.location.reload()
-    }
+    alert('Social Link added')
+    window.location.reload()
+
   }
 
   return (
@@ -61,7 +75,7 @@ function SetLink() {
       <input type="text" placeholder='name of site/social' onChange={(e) => setSocial(e.target.value)} />
       <input type="text" placeholder='enter the link' onChange={(e) => setLink(e.target.value)} />
       <button onClick={add}>Add</button>
-      <p><b>Tip:</b> Add only https link for better experience!</p><br /><hr /><br /><br />
+      <p><b>Tip:</b> Add only <b>https://</b> format link!</p><br /><hr /><br /><br />
 
       {/* link for getlink */}
       <CopyText first={beforeLink} second={username} />
