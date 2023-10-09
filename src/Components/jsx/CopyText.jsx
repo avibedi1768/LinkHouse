@@ -1,13 +1,13 @@
 import React from 'react'
 
-function CopyText(para) {
+function CopyText(val) {
 
-  console.log(para.first + para.second)
+  console.log(val.sharableLink)
 
   const copyToClipboard = () => {
     console.log('copyToClipboard started')
     const textArea = document.createElement('textarea')
-    textArea.value = para.first + para.second
+    textArea.value = val.sharableLink
     document.body.appendChild(textArea)
     textArea.select()
     document.execCommand('copy')
@@ -16,11 +16,11 @@ function CopyText(para) {
   }
 
   const openLink = () => {
-    window.location.href=para.first + para.second
+    window.location.href=val.sharableLink
   }
   return (
     <div>
-      <input type="text" defaultValue={para.first + para.second} />
+      <input type="text" defaultValue={val.sharableLink} />
       <button onClick={copyToClipboard}>copy</button>
       <button onClick={openLink}>Open Link</button>
     </div>

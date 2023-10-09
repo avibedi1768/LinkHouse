@@ -10,7 +10,7 @@ import { get, set, ref, update } from 'firebase/database'
 
 function SetLink() {
 
-  let beforeLink = 'https://link-house.vercel.app/getlink#'
+  let sharableLink = window.location.href.replace('setlink', 'getlink')
   let username = localStorage.getItem('username')
   let url = window.location.href.split('#')[1]
 
@@ -78,7 +78,7 @@ function SetLink() {
       <p><b>Tip:</b> Add only <b>https://</b> format link!</p><br /><hr /><br /><br />
 
       {/* link for getlink */}
-      <CopyText first={beforeLink} second={username} />
+      <CopyText sharableLink={sharableLink} />
       <p>you can share this link to your friends:</p>
 
       <h4>Already added links:</h4>
