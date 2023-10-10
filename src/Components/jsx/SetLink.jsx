@@ -33,10 +33,10 @@ function SetLink() {
     }
     else {
       console.log('bad')
-      // let l = link
-      // setLink('https://' + link)
-      // console.log(link)
-      alert('Please enter correct https:// format link')
+      let l = 'https://' + link
+      setLink(l)
+      console.log(link)
+      // alert('Please enter correct https:// format link')
       return;
     }
 
