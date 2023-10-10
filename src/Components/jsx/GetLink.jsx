@@ -70,6 +70,9 @@ function GetLink() {
         <p>Loading...</p>
       )}
 
+      <p>Get your own Link House!</p>
+      <button onClick={() => { window.location.href = '/signup' }}>Click me</button>
+
     </div>
   )
 }
