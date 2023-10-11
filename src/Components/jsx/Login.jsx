@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 //import firebase
@@ -11,6 +11,7 @@ function Login() {
 
   let [user, setUser] = useState('')
   let [pass, setPass] = useState('')
+  let passref=useRef()
 
   function match() {
     console.log(user + ' ' + pass)
@@ -34,6 +35,7 @@ function Login() {
           } else {
             //password does not match
             alert('password does not match. plz try again')
+            passref.current.focus()
           }
         } else {
           //username does not exist
@@ -47,7 +49,7 @@ function Login() {
     <div>
       <h2>Login</h2>
       <input type="text" placeholder='Enter Username' onChange={(e) => setUser(e.target.value)} />
-      <input type="password" placeholder='Enter Password' onChange={(e) => setPass(e.target.value)} />
+      <input ref={passref} type="password" placeholder='Enter Password' onChange={(e) => setPass(e.target.value)} />
       <button onClick={match}>Login</button>
       <p><Link to='/signup'>New user?</Link></p>
     </div>

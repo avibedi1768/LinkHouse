@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 //import firebase
@@ -12,6 +12,7 @@ function Signup() {
   let [user, setUser] = useState('')
   let [pass, setPass] = useState('')
   let [passChecker, setPassChecker] = useState('')
+  let passref=useRef()
 
   function check() {
     console.log(user + ' ' + pass)
@@ -19,6 +20,13 @@ function Signup() {
     //check for empty values
     if (user === '' || pass === '') {
       alert('please enter valid info')
+      return;
+    }
+
+    //check for password length
+    if (pass.length < 8) {
+      alert('password must be at least 8 letters long')
+      passref.current.focus()
       return;
     }
 
@@ -69,7 +77,7 @@ function Signup() {
       <h2>Signup</h2>
       <p><b>Hint:</b> Use your instagram username.</p>
       <input type="text" placeholder='Enter Username' onChange={(e) => setUser(e.target.value)} />
-      <input type="password" placeholder='Enter Password' onChange={(e) => { setPass(e.target.value); checkPassLength() }} />
+      <input ref={passref} type="password" placeholder='Enter Password' onChange={(e) => { setPass(e.target.value); checkPassLength() }} />
       <p>{passChecker}</p>
       <button onClick={check}>Signup</button>
 
