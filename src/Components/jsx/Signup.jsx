@@ -12,7 +12,8 @@ function Signup() {
   let [user, setUser] = useState('')
   let [pass, setPass] = useState('')
   let [passChecker, setPassChecker] = useState('')
-  let passref=useRef()
+  let passref = useRef()
+  let [showPassword, setShowPassword] = useState(false)
 
   function check() {
     console.log(user + ' ' + pass)
@@ -72,12 +73,18 @@ function Signup() {
     }
   }
 
+  //toggle password visibility
+  function passShow() {
+    setShowPassword(!showPassword)
+  }
+
   return (
     <div>
       <h2>Signup</h2>
-      <p><b>Hint:</b> Use your instagram username.</p>
-      <input type="text" placeholder='Enter Username' onChange={(e) => setUser(e.target.value)} />
-      <input ref={passref} type="password" placeholder='Enter Password' onChange={(e) => { setPass(e.target.value); checkPassLength() }} />
+      <p><b>Hint:</b> Use your instagram username.(Don't use space)</p>
+      <input type="text" placeholder='Enter Username' onChange={(e) => setUser(e.target.value)} /><br /><br />
+      <input ref={passref} type={showPassword ? 'text' : 'password'} placeholder='Enter Password' onChange={(e) => { setPass(e.target.value); checkPassLength() }} />
+      <input type="checkbox" onChange={passShow}  />Show Password
       <p>{passChecker}</p>
       <button onClick={check}>Signup</button>
 
