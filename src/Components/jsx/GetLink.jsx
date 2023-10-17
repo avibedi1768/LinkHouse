@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
+import Footer from './Footer'
+
 //import firebase
 import { db } from '../../firebase'
 import { get, ref } from 'firebase/database'
@@ -56,23 +58,26 @@ function GetLink() {
 
   return (
     <div>
-      <h2>Welcome to {user}'s Link-House!</h2>
+      <div style={{minHeight:'50vh'}}>
+        <h2>Welcome to {user}'s Link-House!</h2>
 
-      {link.length > 0 ? (
-        <ul>
-          {link.map((item, index) => (
-            <li key={index}>
-              <Link to={item}>{social[index]}</Link>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Loading...</p>
-      )}
+        {link.length > 0 ? (
+          <ul>
+            {link.map((item, index) => (
+              <li key={index}>
+                <Link to={item} target='_blank'>{social[index]}</Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Loading...</p>
+        )}
 
-      <p>Get your own Link House!</p>
-      <button onClick={() => { window.location.href = '/signup' }}>Click me</button>
+        <p>Get your own Link House!</p>
+        <button onClick={() => { window.location.href = '/signup' }}>Click me</button>
+      </div>
 
+      <Footer />
     </div>
   )
 }

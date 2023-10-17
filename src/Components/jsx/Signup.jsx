@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
+import Footer from './Footer'
+
 //import firebase
 import { db } from '../../firebase'
 import { get, set, ref } from 'firebase/database'
@@ -84,11 +86,13 @@ function Signup() {
       <p><b>Hint:</b> Use your instagram username.(Don't use space)</p>
       <input type="text" placeholder='Enter Username' onChange={(e) => setUser(e.target.value)} /><br /><br />
       <input ref={passref} type={showPassword ? 'text' : 'password'} placeholder='Enter Password' onChange={(e) => { setPass(e.target.value); checkPassLength() }} />
-      <input type="checkbox" onChange={passShow}  />Show Password
+      <input type="checkbox" onChange={passShow} />Show Password
       <p>{passChecker}</p>
       <button onClick={check}>Signup</button>
 
       <p><Link to='/login'>Already a user?</Link></p>
+
+      <Footer />
     </div>
   )
 }

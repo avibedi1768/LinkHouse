@@ -80,9 +80,11 @@ function SetLink() {
       {/* link for getlink */}
       <CopyText sharableLink={sharableLink} />
       <p>you can share this link to your friends:</p>
+      <br /><br />
+      <h1>Already added links:</h1>
 
-      <h4>Already added links:</h4>
       <GetLink />
+      {/* no need of footer here; bcz footer comes from setlink */}
     </div>
   )
 }

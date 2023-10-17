@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
+import Footer from './Footer'
+
 //import firebase
 import { db } from '../../firebase'
 import { ref, get } from 'firebase/database'
@@ -56,9 +58,11 @@ function Login() {
       <h2>Login</h2>
       <input type="text" placeholder='Enter Username' onChange={(e) => setUser(e.target.value)} /><br /><br />
       <input ref={passref} type={passwordShow ? 'text' : 'password'} placeholder='Enter Password' onChange={(e) => setPass(e.target.value)} />
-      <input type="checkbox" onChange={passShow} />Show password <br/><br/>
+      <input type="checkbox" onChange={passShow} />Show password <br /><br />
       <button onClick={match}>Login</button>
       <p><Link to='/signup'>New user?</Link></p>
+
+      <Footer />
     </div>
   )
 }
