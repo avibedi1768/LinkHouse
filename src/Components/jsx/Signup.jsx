@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-
-import Footer from './Footer'
+import './../css/signup.css'
 
 //import firebase
 import { db } from '../../firebase'
@@ -68,8 +67,11 @@ function Signup() {
 
   function checkPassLength() {
     // console.log('hey')
-    if (pass.length < 7) {
-      setPassChecker('Password should be at least 8 letters long')
+    if (pass.length <= 1) {
+      setPassChecker('')
+    }
+    else if (pass.length >= 1 && pass.length < 7) {
+      setPassChecker('"MUST BE 8 LETTERS LONG!!"')
     } else {
       setPassChecker('')
     }
@@ -81,18 +83,96 @@ function Signup() {
   }
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <p><b>Hint:</b> Use your instagram username.(Don't use space)</p>
-      <input type="text" placeholder='Enter Username' onChange={(e) => setUser(e.target.value)} /><br /><br />
-      <input ref={passref} type={showPassword ? 'text' : 'password'} placeholder='Enter Password' onChange={(e) => { setPass(e.target.value); checkPassLength() }} />
-      <input type="checkbox" onChange={passShow} />Show Password
-      <p>{passChecker}</p>
-      <button onClick={check}>Signup</button>
+    <div className='signup-body'>
+      <div className="signup-container">
+        <div className="signup-box">
+          <h2>Signup</h2>
 
-      <p><Link to='/login'>Already a user?</Link></p>
+          {/* <p><b>Hint:</b> Use your instagram username.(Don't use space)</p> */}
 
-      <Footer />
+          <form action="#" className="signup-form">
+
+            <div className="signup-input-box">
+              <input type="text" id='signup-input-username' onChange={(e) => setUser(e.target.value)} />
+              <label htmlFor="signup-input-username">Username</label>
+            </div>
+
+            <div className="signup-input-box">
+              <input ref={passref} type={showPassword ? 'text' : 'password'} id='signup-input-password' onChange={(e) => { setPass(e.target.value); checkPassLength() }} />
+              <label htmlFor="signup-input-password">Password {passChecker}</label>
+            </div>
+
+            <div className='signup-input-showPassword'>
+              <input type="checkbox" onChange={passShow} style={{ width: '12px' }} />Show Password
+              {/* <p>{passChecker}</p> */}
+            </div>
+
+            <button type='submit' onClick={check} className="signup-btn">Signup</button>
+
+            <div className="login-link">
+              <p><Link to='/login' className='login-link-link' >Already a user? Login</Link></p>
+            </div>
+          </form>
+        </div>
+
+        <span style={{ "--i": 0 }}></span>
+        <span style={{ "--i": 1 }}></span>
+        <span style={{ "--i": 2 }}></span>
+        <span style={{ "--i": 3 }}></span>
+        <span style={{ "--i": 4 }}></span>
+        <span style={{ "--i": 5 }}></span>
+        <span style={{ "--i": 6 }}></span>
+        <span style={{ "--i": 7 }}></span>
+        <span style={{ "--i": 8 }}></span>
+        <span style={{ "--i": 9 }}></span>
+        <span style={{ "--i": 10 }}></span>
+        <span style={{ "--i": 11 }}></span>
+        <span style={{ "--i": 12 }}></span>
+        <span style={{ "--i": 13 }}></span>
+        <span style={{ "--i": 14 }}></span>
+        <span style={{ "--i": 15 }}></span>
+        <span style={{ "--i": 16 }}></span>
+        <span style={{ "--i": 17 }}></span>
+        <span style={{ "--i": 18 }}></span>
+        <span style={{ "--i": 19 }}></span>
+        <span style={{ "--i": 20 }}></span>
+        <span style={{ "--i": 21 }}></span>
+        <span style={{ "--i": 22 }}></span>
+        <span style={{ "--i": 23 }}></span>
+        <span style={{ "--i": 24 }}></span>
+        <span style={{ "--i": 25 }}></span>
+        <span style={{ "--i": 26 }}></span>
+        <span style={{ "--i": 27 }}></span>
+        <span style={{ "--i": 28 }}></span>
+        <span style={{ "--i": 29 }}></span>
+        <span style={{ "--i": 30 }}></span>
+        <span style={{ "--i": 31 }}></span>
+        <span style={{ "--i": 32 }}></span>
+        <span style={{ "--i": 33 }}></span>
+        <span style={{ "--i": 34 }}></span>
+        <span style={{ "--i": 35 }}></span>
+        <span style={{ "--i": 36 }}></span>
+        <span style={{ "--i": 37 }}></span>
+        <span style={{ "--i": 38 }}></span>
+        <span style={{ "--i": 39 }}></span>
+        <span style={{ "--i": 40 }}></span>
+        <span style={{ "--i": 41 }}></span>
+        <span style={{ "--i": 42 }}></span>
+        <span style={{ "--i": 43 }}></span>
+        <span style={{ "--i": 44 }}></span>
+        <span style={{ "--i": 45 }}></span>
+        <span style={{ "--i": 46 }}></span>
+        <span style={{ "--i": 47 }}></span>
+        <span style={{ "--i": 48 }}></span>
+        <span style={{ "--i": 49 }}></span>
+      </div>
+
+      <br /><br /><br />
+      <p style={{ color: "#fff" }}>HEY <span style={{ color: "#0ef", fontWeight: "600", fontSize: "1.2em" }}>{user}</span>!</p>
+
+      <h3 style={{ color: "#fff" }}>
+        <span style={{ color: '#0ef', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
+      </h3>
     </div>
   )
 }
