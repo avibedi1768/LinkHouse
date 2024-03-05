@@ -135,8 +135,8 @@ function Login() {
         <span style={{ "--i": 49 }}></span>
       </div>
 
-      <h3 style={{ color: "#fff" }}>
-        <span style={{ color: '#0ef', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
+      <h3 style={{ color: "#9a1750" }}>
+        <span style={{ color: '#ee4c7c', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#ee4c7c', textDecoration: 'none' }}>Arsh</Link>
       </h3>
     </div>
   )
