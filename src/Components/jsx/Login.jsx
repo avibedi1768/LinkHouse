@@ -135,8 +135,11 @@ function Login() {
         <span style={{ "--i": 49 }}></span>
       </div>
 
-      <h3 style={{ color: "#9a1750" }}>
-        <span style={{ color: '#ee4c7c', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#ee4c7c', textDecoration: 'none' }}>Arsh</Link>
+      <h3 style={{ color: "#fff" }}>
+        <span style={{ color: '#c3073f', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#c3073f', textDecoration: 'none' }}
+          onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
+          onMouseOut={(e) => e.target.style.textDecoration = 'none'}
+        >Arsh</Link>
       </h3>
     </div>
   )
