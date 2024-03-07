@@ -168,11 +168,11 @@ function Signup() {
       </div>
 
       <br /><br /><br />
-      <p style={{ color: "#fff" }}>HEY <span style={{ color: "#c3073f", fontWeight: "600", fontSize: "1.2em" }}>{user}</span>!</p>
+      <p style={{ color: "#fff" }}>HEY <span style={{ color: "#0ef", fontWeight: "600", fontSize: "1.2em" }}>{user}</span>!</p>
 
       <h3 style={{ color: "#fff" }}>
-        <span style={{ color: '#c3073f', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io'
-          style={{ color: '#c3073f', textDecoration: 'none' }}
+        <span style={{ color: '#0ef', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io'
+          style={{ color: '#0ef', textDecoration: 'none' }}
           onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
           onMouseOut={(e) => e.target.style.textDecoration = 'none'}
         >Arsh</Link>

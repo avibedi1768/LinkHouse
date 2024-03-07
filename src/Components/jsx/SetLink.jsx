@@ -4,6 +4,8 @@ import { useState } from 'react'
 import GetLink from './GetLink'
 import CopyText from './CopyText'
 
+import './../css/setLink.css'
+
 // import firebase
 import { db } from '../../firebase'
 import { get, set, ref, update } from 'firebase/database'
@@ -70,7 +72,7 @@ function SetLink() {
   }
 
   return (
-    <div>
+    <div className='set-body'>
       <h2>Hey {username}!</h2>
       <input type="text" placeholder='name of site/social' onChange={(e) => setSocial(e.target.value)} />
       <input type="text" placeholder='enter the link' onChange={(e) => setLink(e.target.value)} />

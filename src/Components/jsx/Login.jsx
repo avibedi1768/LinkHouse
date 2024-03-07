@@ -136,7 +136,7 @@ function Login() {
       </div>
 
       <h3 style={{ color: "#fff" }}>
-        <span style={{ color: '#c3073f', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#c3073f', textDecoration: 'none' }}
+        <span style={{ color: '#0ef', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}
           onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
           onMouseOut={(e) => e.target.style.textDecoration = 'none'}
         >Arsh</Link>

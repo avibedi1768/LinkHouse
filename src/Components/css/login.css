@@ -22,7 +22,7 @@
   max-height: 100vh;
   overflow-x: hidden;
   gap: 25vh;
-  background: #1a1a1d;
+  background: #1f293a;
 }
 
 .login-container {
@@ -39,7 +39,7 @@
   left: 0;
   width: 20px;
   height: 6px;
-  background: #5d001e;
+  background: #2c4766;
   border-radius: 8px;
   transform-origin: 120px;
   transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
@@ -49,10 +49,10 @@
 
 @keyframes animate {
   0% {
-    background: #c3073f;
+    background: #0ef;
   }
   25% {
-    background: #5d001e;
+    background: #2c4766;
   }
 }
 
@@ -68,7 +68,7 @@
 
 .login-box h2 {
   font-size: 2em;
-  color: #c3073f;
+  color: #0ef;
   text-align: center;
 }
 
@@ -81,17 +81,17 @@
   width: 100%;
   height: 50px;
   background: transparent;
-  border: 2px solid #5d001e;
+  border: 2px solid #2c4766;
   outline: none;
   border-radius: 40px;
   font-size: 1em;
-  color: #c3073f;
+  color: #fff;
   padding: 0 20px;
   transition: 0.5s ease;
 }
 
 .login-input-box input:focus {
-  border-color: #c3073f;
+  border-color: #0ef;
 }
 
 .login-input-box label {
@@ -101,13 +101,13 @@
   transform: translateY(-50%);
   font-size: 0.8em;
   color: #fff;
-  background: #1a1a1d;
+  background: #1f293a;
   pointer-events: none;
   transition: 0.5s ease;
 }
 
 .login-input-box input:focus ~ label {
-  color: #c3073f;
+  color: #0ef;
 }
 
 /* .login-input-box input:focus~label,
@@ -123,26 +123,20 @@
   justify-content: center;
   gap: 10px;
   font-size: 0.85em;
-  color: #c3073f;
+  color: white;
 }
 
 .login-btn {
   width: 100%;
   height: 45px;
-  background: #c3073f;
+  background: #0ef;
   border: none;
   outline: none;
   border-radius: 40px;
   cursor: pointer;
   font-size: 1em;
-  color: #e3e2df;
+  color: #1f293a;
   font-weight: 600;
-  transition: 1s ease;
-}
-
-.login-btn:hover,
-.login-btn:focus {
-  background: #5d001e;
 }
 
 .signup-link {
@@ -152,7 +146,7 @@
 
 .signup-link .signup-link-link {
   font-size: 1em;
-  color: #c3073f;
+  color: #0ef;
   text-decoration: none;
   font-weight: 600;
 }

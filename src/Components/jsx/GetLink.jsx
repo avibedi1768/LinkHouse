@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
 import Footer from './Footer'
+import './../css/getLink.css'
 
 //import firebase
 import { db } from '../../firebase'
@@ -57,27 +58,47 @@ function GetLink() {
   }
 
   return (
-    <div>
-      <div style={{minHeight:'50vh'}}>
-        <h2>Welcome to {user}'s Link-House!</h2>
+    <div className='get-body'>
+      <div className="get-container">
+        <h1>Welcome to {user.toUpperCase()}'s Link-House!</h1>
 
         {link.length > 0 ? (
-          <ul>
+          <div className="get-box">
             {link.map((item, index) => (
-              <li key={index}>
-                <Link to={item} target='_blank'>{social[index]}</Link>
-              </li>
+              <div className="get-items">
+                <p key={index}>
+                  <Link className='get-item-link' to={item} target='_blank'>
+                    <div className="get-item">
+                      {social[index]}
+                    </div>
+                  </Link>
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
         ) : (
           <p>Loading...</p>
         )}
 
-        <p>Get your own Link House!</p>
-        <button onClick={() => { window.location.href = '/signup' }}>Click me</button>
+        <p>
+          <Link to={"/signup"} className='signup-link'>
+            Get your own Link-House!
+          </Link>
+        </p>
+
+        <h3 style={{ color: "#fff" }}>
+          <span style={{ color: '#0ef', textDecoration: 'none' }}>LinkHouse</span> - Made by <Link to='https://avibedi1768.github.io'
+            style={{ color: '#0ef', textDecoration: 'none' }}
+            onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
+            onMouseOut={(e) => e.target.style.textDecoration = 'none'}
+          >Arsh</Link>
+        </h3>
       </div>
 
-      <Footer />
+
+      {/* <button onClick={() => { window.location.href = '/signup' }}>Click me</button> */}
+
+      {/* <Footer /> */}
     </div>
   )
 }
